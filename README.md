@@ -18,7 +18,8 @@ You can run one of the stock examples:
 
 ```
 docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
-docker -v $PROJECT_ROOT/deploy:/user/susharma/wordcount run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+docker run -v $PROJECT_ROOT/deploy:/user/susharma/wordcount -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+docker run -v /home/turn/hadoopWorkspace/Hadooplearning/deploy:/user/susharma/wordcount -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
 ```
 
 ## Testing
@@ -52,7 +53,7 @@ bin/hadoop fs -cat /wordcount/input/file02
 
 ###run program to calculate the word count
 ```
-bin/hadoop jar /user/susharma/wordcount/Hadooplearning.jar hadoop.WordCount /wordcount/input/file01 /wordcount/output
+bin/hadoop jar /user/susharma/wordcount/Hadooplearning.jar hadoop.WordCount /wordcount/input/ /wordcount/output
 ```
 
 ###Checkoutput
